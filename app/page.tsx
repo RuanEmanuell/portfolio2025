@@ -85,7 +85,7 @@ export default function Home() {
       console.log(camera);
   
       if (startTime) {
-        let elapsedTime = (performance.now() - startTime) / duration;
+        const elapsedTime = (performance.now() - startTime) / duration;
         if (elapsedTime < 1) {
           camera.position.lerpVectors(initialPosition, targetPosition, elapsedTime);
   
