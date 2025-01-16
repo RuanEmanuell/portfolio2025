@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes image-animation{
+    0% {width: 24rem; height: 24rem;}
+    50% {width: 26rem; height: 26rem;}
+    100% {width: 24rem; height: 24rem;}
+}
+
+.animation{
+    animation-name: image-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#screen-1 {
+    height: 575px;
+}

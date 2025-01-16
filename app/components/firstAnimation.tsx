@@ -31,7 +31,7 @@ export default function firstAnimation() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(0.25);
     renderer.domElement.style.imageRendering = 'pixelated';
-    document.querySelector("#animation0")!.appendChild(renderer.domElement);
+    document.querySelector("#screen-0")!.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
 
