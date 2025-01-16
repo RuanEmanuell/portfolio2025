@@ -13,7 +13,7 @@ export default function secondAnimation() {
 
     let me;
     let mixer : THREE.AnimationMixer;
-    let clock = new THREE.Clock();
+    const clock = new THREE.Clock();
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
