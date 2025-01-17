@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.animation{
-    animation-name: image-animation;
-    animation-duration: 4s;
+@keyframes hand-animation{
+    0% {transform: rotate(0);}
+    50% {transform: rotate(60deg);}
+    100% {transform: rotate(0);}
+}
+
+.hand-animate{
+    animation-name: hand-animation;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
 }
