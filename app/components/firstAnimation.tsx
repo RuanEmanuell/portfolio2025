@@ -2,7 +2,6 @@
 
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
 export default function firstAnimation() {
     const scene = new THREE.Scene();

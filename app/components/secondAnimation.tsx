@@ -2,7 +2,6 @@
 
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
 let javascript: THREE.Group<THREE.Object3DEventMap> | undefined;
 let react: THREE.Group<THREE.Object3DEventMap> | undefined;
