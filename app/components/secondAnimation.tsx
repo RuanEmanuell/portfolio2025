@@ -29,6 +29,7 @@ export function secondAnimation() {
 
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(7.5, 7.5, 7.5);
+    camera.lookAt(0, 0, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
@@ -64,15 +65,8 @@ export function secondAnimation() {
         });
     }
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.minDistance = 12;
-    controls.maxDistance = 12;
-    controls.minPolarAngle = Math.PI / 3;
-    controls.maxPolarAngle = Math.PI / 3;
-
     function animate() {
         requestAnimationFrame(animate);
-        controls.update();
 
         if (models && models[index].model) {
             models[index].model!.rotation.y += 0.005;

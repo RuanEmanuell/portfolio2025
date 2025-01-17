@@ -10,6 +10,7 @@ export default function firstAnimation() {
 
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(40, 20, -10);
+    camera.lookAt(0, 0, 0);
 
     let table;
     let monitor;
@@ -64,8 +65,6 @@ export default function firstAnimation() {
         scene.add(pc);
     });
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-
     let startTime: number | null = null;
     const targetPosition = new THREE.Vector3(12, 8.75, -5.25);
     const initialPosition = camera.position.clone();
@@ -75,8 +74,6 @@ export default function firstAnimation() {
 
     function animate() {
         requestAnimationFrame(animate);
-        controls.update();
-
 
         if (startTime) {
             const elapsedTime = (performance.now() - startTime) / duration;

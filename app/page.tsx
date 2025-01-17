@@ -59,11 +59,11 @@ export default function Home() {
               👋
             </h1>
           </div>
-          <h2 className="text-md text-center md:text-2xl text-white my-2 italic font-semibold text-gray-300">
+          <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.png" className="w-full h-full rounded-full w-72 h-72 lg:w-112 w-112 my-8"></img>
-          <h2 className="text-md text-center md:text-xl text-white mb-8 max-w-md">
+          <img src="./image-border.png" className="w-full h-full rounded-full w-64 h-64 md:w-112 md:h-112 my-8"></img>
+          <h2 className="text-md text-center md:text-xl text-white mb-8 px-4 max-w-lg">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
         </section>
@@ -74,7 +74,7 @@ export default function Home() {
           <h1 className="text-xl text-center font-bold lg:text-3xl bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent my-8">
             Algumas tecnologias que eu conheço
           </h1>
-          <div id="language-3dmodel" className='w-80 lg:w-128 h-96 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center'></div>
+          <div id="language-3dmodel" className='w-80 lg:w-128 h-80 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center'></div>
           <div className='w-80 lg:w-128 mx-auto border-x-2 border-y-2 rounded-b-lg border-gray-700 bg-[#0D1117] flex flex-col justify-center items-center pb-2'>
             <h2
               style={{ color: techs[techIndex].color }}
