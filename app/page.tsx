@@ -150,7 +150,7 @@ export default function Home() {
           </div>
           <div className='h-8 flex flex-row items-center'>
             {projects.map((project, index) =>
-              <p style={{ backgroundColor: index === projectIndex ? 'white' : 'transparent' }} className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-white border-2 mx-2 transition-all'></p>
+              <p style={{ backgroundColor: index === projectIndex ? 'white' : 'transparent' }} className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-white border-2 mx-2 transition-all' key={index}></p>
             )}
           </div>
         </section>
