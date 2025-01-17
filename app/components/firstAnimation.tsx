@@ -29,7 +29,7 @@ export default function firstAnimation() {
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(0.25);
+    renderer.setPixelRatio(window.devicePixelRatio / 4);
     renderer.domElement.style.imageRendering = 'pixelated';
     document.querySelector("#screen-0")!.appendChild(renderer.domElement);
 
@@ -96,4 +96,11 @@ export default function firstAnimation() {
     }, 2000);
 
     animate();
+
+    window.addEventListener("resize", function () {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio / 4);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
 }

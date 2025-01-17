@@ -8,8 +8,25 @@
     100% {transform: rotate(0);}
 }
 
+@keyframes fade-in{
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
 .hand-animate{
     animation-name: hand-animation;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+}
+
+#screen-1{
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+#screen-2{
+    animation-name: fade-in;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
 }
