@@ -38,7 +38,7 @@ export default function firstAnimation() {
     loader.load("./model/table.glb", function (gltf) {
         table = gltf.scene;
         table.position.x = 15;
-        scene.add(gltf.scene);
+        scene.add(table);
     });
 
     loader.load("./model/monitor.glb", function (gltf) {
@@ -46,7 +46,7 @@ export default function firstAnimation() {
         monitor.position.x = 11.5;
         monitor.position.y = 4.25;
         monitor.position.z = -6;
-        scene.add(gltf.scene);
+        scene.add(monitor);
     });
 
     loader.load("./model/chair.glb", function (gltf) {
@@ -54,14 +54,14 @@ export default function firstAnimation() {
         chair.rotation.y = -1.6;
         chair.position.x = 16;
         chair.position.z = -7;
-        scene.add(gltf.scene);
+        scene.add(chair);
     });
 
     loader.load("./model/pc.glb", function (gltf) {
         pc = gltf.scene;
         pc.position.y = 4.25;
         pc.position.x = 12.5;
-        scene.add(gltf.scene);
+        scene.add(pc);
     });
 
     const controls = new OrbitControls(camera, renderer.domElement);
