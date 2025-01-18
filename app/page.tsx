@@ -145,8 +145,8 @@ export default function Home() {
           <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-128 md:h-128" alt="Meu avatar em 3D"></img>
-          <h2 className="text-md md:text-xl lg:text-2xl text-center text-white my-2 px-4 max-w-lg">
+          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D"></img>
+          <h2 className="text-md md:text-xl lg:text-3xl text-center text-white my-2 px-4 max-w-2xl">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
         </section>
@@ -157,8 +157,8 @@ export default function Home() {
           <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Algumas tecnologias que eu conheço
           </h1>
-          <div id="language-3dmodel" className='w-80 h-80 md:w-128 lg:w-144 md:h-96 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center mt-6'></div>
-          <div className='w-80 md:w-128 lg:w-144 h-64 mx-auto border-x-2 border-y-2 rounded-b-lg border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 flex flex-col justify-center items-center pb-2'>
+          <div id="language-3dmodel" className='w-80 h-80 md:w-128 lg:w-full max-w-2xl md:h-96 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center mt-6'></div>
+          <div className='w-80 md:w-128 lg:w-full max-w-2xl h-64 mx-auto border-x-2 border-y-2 rounded-b-lg border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 flex flex-col justify-center items-center pb-2'>
             <h2
               style={{ color: techs[techIndex].color }}
               className="text-lg md:text-2xl lg:text-3xl font-semibold mt-2 transition-all"
@@ -178,7 +178,7 @@ export default function Home() {
           <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
             Minhas experiências profissionais
           </h1>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
+          <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <span className=''>
             <div className='flex flex-row items-center w-full px-6'>
               <img src="./logos/bravo.png" className='w-10 h-10 mr-4' alt="Logo da Bravo"></img>
@@ -190,7 +190,7 @@ export default function Home() {
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento e manutenção de aplicações web escaláveis, com foco em Angular no front-end e Node.js no back-end.</p>
             </span>
           </div>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
+          <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
               <img src="./logos/codiub.png" className='w-10 h-10 mr-4'alt="Logo da Codiub"></img>
               <div className='flex flex-col'>
@@ -200,7 +200,7 @@ export default function Home() {
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento de aplicações web com linguagens e frameworks como: Angular, Java Spring Boot e Java ServerFaces (JSF).</p>
           </div>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
+          <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
               <img src="./logos/candido.png" className='w-10 h-10 mr-4'alt="Logo da Candido"></img>
               <div className='flex flex-col'>
@@ -220,7 +220,7 @@ export default function Home() {
           <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Escolaridade e formações
           </h1>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
+          <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
               <img src="./logos/iftm.png" className='w-10 h-10 mr-4' alt="Logo da IFTM"></img>
               <div className='flex flex-col'>
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Atualmente estou no quinto período de Análise e Desenvolvimento de Sistemas pela IFTM.  Durante a graduação, adquiri conhecimentos em linguagens de programação, engenharia de software, banco de dados e metodologias ágeis. Também participei de projetos acadêmicos que fortaleceram minha capacidade de desenvolver aplicações robustas e inovadoras. (Previsão de Conclusão: 12/2025)</p>
           </div>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
+          <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
               <img src="./logos/senai.png" className='w-10 h-10 mr-4' alt="Logo da SENAI"></img>
               <div className='flex flex-col'>
@@ -258,7 +258,7 @@ export default function Home() {
               </div>
             </button>
             <div className='flex flex-col'>
-              <div className='w-72 h-72 lg:w-128 lg:h-96 bg-gray-800 rounded mx-auto'>
+              <div className='w-72 h-72 md:w-144 md:h-96 bg-gray-800 rounded mx-auto'>
                 <div className='border-x-2 border-t-2 border-gray-700 h-6 lg:h-8 flex flex-row items-center'>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-red-500 mx-2'></p>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-yellow-500 mx-2'></p>
