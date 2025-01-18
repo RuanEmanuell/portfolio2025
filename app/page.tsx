@@ -245,10 +245,10 @@ export default function Home() {
           id="screen-5"
           className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent mb-4">
             Alguns dos meus projetos
           </h1>
-          <div className='flex flex-row my-6'>
+          <div className='flex flex-row justify-center my-2'>
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center transition hover:bg-gray-300 hover:scale-105' onClick={decreaseProjectIndex} button-name="Passar pro projeto anterior">
               <div className="w-0 h-0 
               rotate-90
@@ -258,7 +258,7 @@ export default function Home() {
               </div>
             </button>
             <div className='flex flex-col'>
-              <div className='w-72 h-72 md:w-144 md:h-96 bg-gray-800 rounded mx-auto'>
+              <div className='w-72 h-72 md:w-144 md:h-96 bg-gray-800 rounded'>
                 <div className='border-x-2 border-t-2 border-gray-700 h-6 lg:h-8 flex flex-row items-center'>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-red-500 mx-2'></p>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-yellow-500 mx-2'></p>
@@ -287,7 +287,7 @@ export default function Home() {
             </button>
           </div>
           <div className='flex flex-col h-48 lg:h-64 items-center justify-center'>
-            <h2 className="text-lg lg:text-2xl text-center font-bold text-white mt-8">
+            <h2 className="text-lg lg:text-2xl text-center font-bold text-white">
               {projects[projectIndex].name}
             </h2>
             <p className="text-sm lg:text-lg text-center italic text-gray-300 my-2 mx-8 max-w-md">
