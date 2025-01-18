@@ -120,6 +120,73 @@ export default function Home() {
           className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col mb-8"
         >
           <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent my-8">
+            Minhas experiências profissionais
+          </h1>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+            <div className='flex flex-row items-center w-full px-6'>
+              <img src="./logos/bravo.png" className='w-10 h-10 mr-4'></img>
+              <div className='flex flex-col'>
+                <h1 className='text-lg lg:text-2xl text-white font-bold'>Analista de Sistemas II - Bravo Serviços Logísticos</h1>
+                <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
+              </div>
+            </div>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento de aplicações web com linguagens e frameworks como: Angular, Java Spring Boot e Java ServerFaces (JSF).</p>
+          </div>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+            <div className='flex flex-row items-center w-full px-6'>
+              <img src="./logos/codiub.png" className='w-10 h-10 mr-4'></img>
+              <div className='flex flex-col'>
+                <h1 className='text-lg lg:text-2xl text-white font-bold'>Desenvolvedor de Sistemas Web Júnior - Codiub Solução Digital</h1>
+                <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2024 - 12/2024)</p>
+              </div>
+            </div>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento de aplicações web com linguagens e frameworks como: Angular, Java Spring Boot e Java ServerFaces (JSF).</p>
+          </div>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+            <div className='flex flex-row items-center w-full px-6'>
+              <img src="./logos/candido.png" className='w-10 h-10 mr-4'></img>
+              <div className='flex flex-col'>
+                <h1 className='text-lg lg:text-2xl text-white font-bold'>Estagiário de Desenvolvimento Desktop - Cândido Empresarial</h1>
+                <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2023 - 01/2024)</p>
+              </div>
+            </div>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Construção de novas telas e recursos, bem como manutenção em sistemas empresariais desktop com banco de dados relacional.</p>
+          </div>
+
+        </section>
+        <section
+          id="screen-4"
+          className="mx-auto bg-[#24292E] h-full w-full flex items-center flex-col"
+        >
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent my-8">
+            Escolaridade e formações
+          </h1>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+            <div className='flex flex-row items-center w-full px-6'>
+              <img src="./logos/iftm.png" className='w-10 h-10 mr-4'></img>
+              <div className='flex flex-col'>
+                <h1 className='text-lg lg:text-2xl text-white font-bold'>Graduação em ADS - IFTM Campus Uberaba Parque Tecnológico</h1>
+                <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(02/2023 - presente)</p>
+              </div>
+            </div>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Atualmente estou no quinto período de Análise e Desenvolvimento de Sistemas pela IFTM.  Durante a graduação, adquiri conhecimentos em linguagens de programação, engenharia de software, banco de dados e metodologias ágeis. Também participei de projetos acadêmicos que fortaleceram minha capacidade de desenvolver aplicações robustas e inovadoras. (Previsão de Conclusão: 12/2025)</p>
+          </div>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+            <div className='flex flex-row items-center w-full px-6'>
+              <img src="./logos/senai.png" className='w-10 h-10 mr-4'></img>
+              <div className='flex flex-col'>
+                <h1 className='text-lg lg:text-2xl text-white font-bold'>Aprendizagem em Automação Industrial - SENAI</h1>
+                <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(06/2021 - 06/2022)</p>
+              </div>
+            </div>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Durante o curso, aprendi a criar soluções para automação de processos industriais, desde a interpretação de diagramas elétricos até o desenvolvimento de sistemas de controle eficientes e seguros. Adquiri também habilidades práticas em programação de CLPs, com ênfase na linguagem Ladder.</p>
+          </div>
+        </section>
+        <section
+          id="screen-5"
+          className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col mb-8"
+        >
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent my-8">
             Alguns dos meus projetos
           </h1>
           <div className='flex flex-row'>
