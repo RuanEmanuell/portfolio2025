@@ -24,9 +24,8 @@ const models = [
     { model: sql, path: "./model/sql.glb" },
 ];
 
-const renderer = new THREE.WebGLRenderer();
-
 export async function secondAnimation() {
+    const renderer = new THREE.WebGLRenderer();
 
     const scene = new THREE.Scene();
 
