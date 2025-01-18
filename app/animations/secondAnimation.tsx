@@ -82,7 +82,13 @@ export async function secondAnimation() {
         camera.updateProjectionMatrix();
     });
 
-    renderSecondAnimation();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio / 4);
+    renderer.domElement.style.imageRendering = 'pixelated';
+    renderer.setClearColor(0x000000, 0);
+    if (document.querySelector("#language-3dmodel")) {
+        document.querySelector("#language-3dmodel")!.appendChild(renderer.domElement);
+    }
 }
 
 export function changeTechModel(i: number) {
@@ -93,14 +99,4 @@ export function changeTechModel(i: number) {
         models[models.length - 1].model!.position.x = 100;
     }
     models[index].model!.position.x = 0;
-}
-
-export async function renderSecondAnimation() {
-    if (document && document.querySelector("#language-3dmodel")) {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio / 4);
-        renderer.domElement.style.imageRendering = 'pixelated';
-        renderer.setClearColor(0x000000, 0);
-        document.querySelector("#language-3dmodel")!.appendChild(renderer.domElement);
-    }
 }

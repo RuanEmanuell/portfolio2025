@@ -4,10 +4,9 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
 let startTime: number | null = null;
-const renderer = new THREE.WebGLRenderer();
 
 export async function firstAnimation() {
-
+    const renderer = new THREE.WebGLRenderer();
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff);
 
@@ -98,19 +97,17 @@ export async function firstAnimation() {
         camera.updateProjectionMatrix();
     });
 
-    renderFirstAnimation();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio / 4);
+    renderer.domElement.style.imageRendering = 'pixelated';
+
+    if (document.querySelector("#screen-0")) {
+        document.querySelector("#screen-0")!.appendChild(renderer.domElement);
+    }
 
     return true;
 }
 
 export function startTransitionToSecondAnimation() {
     startTime = performance.now();
-}
-
-export async function renderFirstAnimation() {
-    if (document && document.querySelector("#screen-0")) { }
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio / 4);
-    renderer.domElement.style.imageRendering = 'pixelated';
-    document.querySelector("#screen-0")!.appendChild(renderer.domElement);
 }
