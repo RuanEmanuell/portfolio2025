@@ -8,6 +8,7 @@ export default function Home() {
   const [screenIndex, setScreenIndex] = useState(0);
   const [techIndex, setTechIndex] = useState(0);
   const [projectIndex, setProjectIndex] = useState(0);
+  const [navMenuVisible, setNavMenuVisible] = useState(false);
 
   const techs = [
     { tech: "Javascript", color: "#F0DB4F", text: "Javascript foi a primeira linguagem de programação em que desenvolvi, ainda em 2022. Desde então, tenho usado-a quase que diariamente, seja em sua forma pura ou com seus frameworks e bibliotecas." },
@@ -63,6 +64,16 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    if (navMenuVisible) {
+      document.body.style.overflow = 'hidden';
+      document.querySelector("#hand")?.classList.remove("hand-animate");
+    } else {
+      document.body.style.overflow = 'visible';
+      document.querySelector("#hand")?.classList.add("hand-animate");
+    }
+  }, [navMenuVisible])
+
   return (
     <>
       <section
@@ -74,34 +85,57 @@ export default function Home() {
       <div
         className={`${screenIndex === 1 ? 'flex' : 'hidden'} flex-col`}
       >
+        <nav className='bg-black w-full h-16 flex justify-end lg:justify-center items-center'>
+          <div className='max-w-xl w-full flex-row justify-between hidden lg:flex'>
+            <a className='text-white text-md pointer font-bold' href='#'>Sobre mim</a>
+            <a className='text-white text-md pointer font-bold' href='#screen-2'>Tecnologias</a>
+            <a className='text-white text-md pointer font-bold' href='#screen-3'>Experiências</a>
+            <a className='text-white text-md pointer font-bold' href='#screen-4'>Formação</a>
+            <a className='text-white text-md pointer font-bold' href='#screen-5'>Projetos</a>
+          </div>
+          <div className='border-2 border-gray-300 h-12 w-12 p-1 rounded flex flex-col justify-center content-between lg:hidden mx-2 cursor-pointer hover:bg-gray-800' onClick={() => setNavMenuVisible(prev => !prev)}>
+            <div className='w-full h-1 bg-gray-300 rounded mb-2'></div>
+            <div className='w-full h-1 bg-gray-300 rounded mb-2'></div>
+            <div className='w-full h-1 bg-gray-300 rounded'></div>
+          </div>
+        </nav>
+        <section id="nav-menu" className='w-screen h-screen bg-black absolute bg-opacity-50 justify-end' style={{ display: navMenuVisible ? "flex" : "none" }} onClick={() => setNavMenuVisible(prev => !prev)}>
+          <div className='w-60 h-full bg-[#0D1117] flex flex-col items-center py-8'>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#'>Sobre mim</a>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-2'>Tecnologias</a>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-3'>Experiências</a>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-4'>Formação</a>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-5'>Projetos</a>
+          </div>
+        </section>
         <section
           id="screen-1"
-          className="transition-all bg-[#0D1117] flex flex-col items-center"
+          className="transition-all bg-[#0D1117] flex flex-col items-center py-8"
         >
           <div className='flex justify-center flex-row'>
-            <h1 className="text-xl md:text-3xl lg:text-5xl text-center font-bold text-white mt-8">
+            <h1 className="text-xl md:text-3xl lg:text-5xl text-center font-bold text-white mt-2">
               Olá, meu nome é Ruan Emanuell!
             </h1>
-            <h1 className="text-xl md:text-3xl lg:text-5xl text-center font-bold text-white mt-8 ml-2 hand-animate">
+            <h1 className="text-xl md:text-3xl lg:text-5xl text-center font-bold text-white mt-2 ml-2 hand-animate" id="hand">
               👋
             </h1>
           </div>
           <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-128 md:h-128 my-8"></img>
-          <h2 className="text-md md:text-xl lg:text-2xl text-center text-white mb-12 px-4 max-w-lg">
+          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-128 md:h-128"></img>
+          <h2 className="text-md md:text-xl lg:text-2xl text-center text-white my-2 px-4 max-w-lg">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
         </section>
         <section
           id="screen-2"
-          className="mx-auto bg-[#24292E] h-full w-full flex items-center flex-col"
+          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent my-8">
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Algumas tecnologias que eu conheço
           </h1>
-          <div id="language-3dmodel" className='w-80 h-80 md:w-128 lg:w-144 md:h-96 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center'></div>
+          <div id="language-3dmodel" className='w-80 h-80 md:w-128 lg:w-144 md:h-96 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center mt-6'></div>
           <div className='w-80 md:w-128 lg:w-144 h-64 mx-auto border-x-2 border-y-2 rounded-b-lg border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 flex flex-col justify-center items-center pb-2'>
             <h2
               style={{ color: techs[techIndex].color }}
@@ -117,9 +151,9 @@ export default function Home() {
         </section>
         <section
           id="screen-3"
-          className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col mb-8"
+          className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent my-8">
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
             Minhas experiências profissionais
           </h1>
           <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
@@ -156,9 +190,9 @@ export default function Home() {
         </section>
         <section
           id="screen-4"
-          className="mx-auto bg-[#24292E] h-full w-full flex items-center flex-col"
+          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent my-8">
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Escolaridade e formações
           </h1>
           <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
@@ -184,17 +218,17 @@ export default function Home() {
         </section>
         <section
           id="screen-5"
-          className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col mb-8"
+          className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent my-8">
+          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
             Alguns dos meus projetos
           </h1>
-          <div className='flex flex-row'>
-            <button className='bg-white font-bold text-center text-2xl lg:text-4xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={decreaseProjectIndex}>
+          <div className='flex flex-row my-6'>
+            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={decreaseProjectIndex}>
               <p>&#8249;</p>
             </button>
             <div className='flex flex-col'>
-              <div className='w-72 h-72 lg:w-128 lg:h-96 bg-gray-800 rounded my-4 mx-auto'>
+              <div className='w-72 h-72 lg:w-128 lg:h-96 bg-gray-800 rounded mx-auto'>
                 <div className='border-x-2 border-t-2 border-gray-700 h-6 lg:h-8 flex flex-row items-center'>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-red-500 mx-2'></p>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-yellow-500 mx-2'></p>
@@ -203,7 +237,7 @@ export default function Home() {
                 <img src={projects[projectIndex].image} className='h-full w-full object-cover border-2 border-gray-700'></img>
               </div>
             </div>
-            <button className='bg-white font-bold text-center text-2xl lg:text-4xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={increaseProjectIndex}>
+            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={increaseProjectIndex}>
               <p>&#8250;</p>
             </button>
           </div>
@@ -215,12 +249,19 @@ export default function Home() {
               {projects[projectIndex].text}
             </p>
           </div>
-          <div className='h-8 flex flex-row items-center'>
+          <div className='h-8 flex flex-row items-center my-2'>
             {projects.map((project, index) =>
-              <p style={{ backgroundColor: index === projectIndex ? 'white' : 'transparent' }} className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-white border-2 mx-2 transition-all' key={index}></p>
+              <p style={{ backgroundColor: index === projectIndex ? 'white' : 'transparent' }} className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-white border-2 mx-2 transition-all cursor-pointer' key={index} onClick={() => setProjectIndex(index)}></p>
             )}
           </div>
+          <a className='bg-black flex flex-row w-64 h-20 rounded-full items-center justify-center my-6' href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer">
+            <h3 className='text-white font-bold text-lg'>Veja mais no Github</h3>
+            <img src="./logos/github.png" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2'></img>
+          </a>
         </section>
+        <footer className='bg-black w-full h-16 flex justify-center items-center'>
+          <p className='text-white text-md'>© 2025 - Ruan Emanuell</p>
+        </footer>
       </div>
     </>
   );
