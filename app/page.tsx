@@ -262,7 +262,7 @@ export default function Home() {
                   alt={projects[projectIndex].name}
                   ref={projectImgRef}
                   src={projects[projectIndex].image}
-                  loading="lazy"
+                  loading='lazy'
                   className="h-full w-full object-cover border-2 border-gray-700"
                   style={{ display: loadingProject ? "none" : "flex" }}
                   onLoad={handleImageLoad}
