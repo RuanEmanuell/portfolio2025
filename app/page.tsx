@@ -1,14 +1,17 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import firstAnimation from './components/firstAnimation';
-import { secondAnimation, changeTechModel } from './components/secondAnimation';
+import { firstAnimation } from './animations/firstAnimation';
+import { secondAnimation, changeTechModel } from './animations/secondAnimation';
+import Loading from './components/loading';
 
 export default function Home() {
   const [screenIndex, setScreenIndex] = useState(0);
   const [techIndex, setTechIndex] = useState(0);
   const [projectIndex, setProjectIndex] = useState(0);
   const [navMenuVisible, setNavMenuVisible] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadingProject, setLoadingProject] = useState(false);
 
   const techs = [
     { tech: "Javascript", color: "#F0DB4F", text: "Javascript foi a primeira linguagem de programação em que desenvolvi, ainda em 2022. Desde então, tenho usado-a quase que diariamente, seja em sua forma pura ou com seus frameworks e bibliotecas." },
@@ -30,12 +33,15 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    firstAnimation();
-    secondAnimation();
+    firstAnimation().then(() => {
+      setLoading(false);
+    });
 
-    setTimeout(() => {
-      setScreenIndex(1);
-    }, 3150);
+    secondAnimation().then(() => {
+      setTimeout(() => {
+        setScreenIndex(1);
+      }, 1000);
+    });
   }, []);
 
   function changeTechIndex() {
@@ -74,16 +80,26 @@ export default function Home() {
     }
   }, [navMenuVisible])
 
+  useEffect(() => {
+    setLoadingProject(true);
+  }, [projectIndex])
+
+  const handleImageLoad = () => {
+    setLoadingProject(false);
+  };
+
+
   return (
     <>
+      {loading ? <div className='h-screen w-screen flex justify-center items-center'><Loading /></div> : <></>}
       <section
         id="screen-0"
-        className={`${screenIndex === 0 ? 'flex' : 'hidden'} h-full w-full`}
+        className={`${screenIndex === 0 && !loading ? 'flex' : 'hidden'} h-full w-full`}
       >
       </section>
 
       <div
-        className={`${screenIndex === 1 ? 'flex' : 'hidden'} flex-col`}
+        className={`${screenIndex === 1 && !loading ? 'flex' : 'hidden'} flex-col`}
       >
         <nav className='bg-black w-full h-16 flex justify-end lg:justify-center items-center'>
           <div className='max-w-xl w-full flex-row justify-between hidden lg:flex'>
@@ -93,9 +109,9 @@ export default function Home() {
             <a className='text-white text-md pointer font-bold' href='#screen-4'>Formação</a>
             <a className='text-white text-md pointer font-bold' href='#screen-5'>Projetos</a>
           </div>
-          <div className='border-2 border-gray-300 h-12 w-12 p-1 rounded flex flex-col justify-center content-between lg:hidden mx-2 cursor-pointer hover:bg-gray-800' onClick={() => setNavMenuVisible(prev => !prev)}>
-            <div className='w-full h-1 bg-gray-300 rounded mb-2'></div>
-            <div className='w-full h-1 bg-gray-300 rounded mb-2'></div>
+          <div className='border-2 border-gray-300 h-8 w-8 p-1 rounded flex flex-col justify-center content-between lg:hidden mx-2 cursor-pointer hover:bg-gray-800' onClick={() => setNavMenuVisible(prev => !prev)}>
+            <div className='w-full h-1 bg-gray-300 rounded mb-1'></div>
+            <div className='w-full h-1 bg-gray-300 rounded mb-1'></div>
             <div className='w-full h-1 bg-gray-300 rounded'></div>
           </div>
         </nav>
@@ -164,7 +180,7 @@ export default function Home() {
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
               </div>
             </div>
-            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento de aplicações web com linguagens e frameworks como: Angular, Java Spring Boot e Java ServerFaces (JSF).</p>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento e manutenção de aplicações web escaláveis, com foco em Angular no front-end e Node.js no back-end.</p>
           </div>
           <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
             <div className='flex flex-row items-center w-full px-6'>
@@ -234,7 +250,15 @@ export default function Home() {
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-yellow-500 mx-2'></p>
                   <p className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-green-500 mx-2'></p>
                 </div>
-                <img src={projects[projectIndex].image} className='h-full w-full object-cover border-2 border-gray-700'></img>
+                <div className='w-full h-full justify-center items-center pb-12' style={{ display: loadingProject ? "flex" : "none" }}>
+                  <Loading />
+                </div>
+                <img
+                  src={projects[projectIndex].image}
+                  className="h-full w-full object-cover border-2 border-gray-700"
+                  style={{ display: loadingProject ? "none" : "flex" }}
+                  onLoad={handleImageLoad}
+                />
               </div>
             </div>
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={increaseProjectIndex}>
@@ -259,8 +283,12 @@ export default function Home() {
             <img src="./logos/github.png" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2'></img>
           </a>
         </section>
-        <footer className='bg-black w-full h-16 flex justify-center items-center'>
+        <footer className='bg-black w-full h-16 flex justify-around items-center'>
           <p className='text-white text-md'>© 2025 - Ruan Emanuell</p>
+          <div className='w-32 h-8 flex flex-row justify-end'>
+            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.png" className='w-full h-full bg-white rounded-full border-white border-2'></img></a>
+            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.png" className='w-full h-full bg-white rounded-full border-white border-2'></img></a>
+          </div>
         </footer>
       </div>
     </>

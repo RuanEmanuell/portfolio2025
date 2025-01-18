@@ -2,6 +2,7 @@
 
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { startTransitionToSecondAnimation } from './firstAnimation';
 
 let javascript: THREE.Group<THREE.Object3DEventMap> | undefined;
 let react: THREE.Group<THREE.Object3DEventMap> | undefined;
@@ -23,7 +24,10 @@ const models = [
     { model: sql, path: "./model/sql.glb" },
 ];
 
-export function secondAnimation() {
+const renderer = new THREE.WebGLRenderer();
+
+export async function secondAnimation() {
+
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -41,13 +45,6 @@ export function secondAnimation() {
     directionalLight.shadow.camera.far = 50;
     scene.add(directionalLight);
 
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio / 4);
-    renderer.domElement.style.imageRendering = 'pixelated';
-    renderer.setClearColor(0x000000, 0);
-    document.querySelector("#language-3dmodel")!.appendChild(renderer.domElement);
-
     const loader = new GLTFLoader();
 
     for (let i = 0; i < models.length; i++) {
@@ -63,6 +60,8 @@ export function secondAnimation() {
             scene.add(gltf.scene);
         });
     }
+
+    startTransitionToSecondAnimation();
 
     function animate() {
         requestAnimationFrame(animate);
@@ -82,14 +81,26 @@ export function secondAnimation() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
     });
+
+    renderSecondAnimation();
 }
 
 export function changeTechModel(i: number) {
     index = i;
-    if(i>= 1){
+    if (i >= 1) {
         models[index - 1].model!.position.x = 100;
     } else {
         models[models.length - 1].model!.position.x = 100;
     }
     models[index].model!.position.x = 0;
+}
+
+export async function renderSecondAnimation() {
+    if (document && document.querySelector("#language-3dmodel")) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio / 4);
+        renderer.domElement.style.imageRendering = 'pixelated';
+        renderer.setClearColor(0x000000, 0);
+        document.querySelector("#language-3dmodel")!.appendChild(renderer.domElement);
+    }
 }

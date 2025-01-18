@@ -3,7 +3,11 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
-export default function firstAnimation() {
+let startTime: number | null = null;
+const renderer = new THREE.WebGLRenderer();
+
+export async function firstAnimation() {
+
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff);
 
@@ -16,6 +20,7 @@ export default function firstAnimation() {
     let chair;
     let pc;
 
+
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
@@ -26,12 +31,6 @@ export default function firstAnimation() {
     directionalLight.shadow.camera.near = 0.5;
     directionalLight.shadow.camera.far = 50;
     scene.add(directionalLight);
-
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio / 4);
-    renderer.domElement.style.imageRendering = 'pixelated';
-    document.querySelector("#screen-0")!.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
 
@@ -64,7 +63,6 @@ export default function firstAnimation() {
         scene.add(pc);
     });
 
-    let startTime: number | null = null;
     const targetPosition = new THREE.Vector3(12, 8.75, -5.25);
     const initialPosition = camera.position.clone();
     const initialRotation = camera.rotation.clone();
@@ -91,10 +89,6 @@ export default function firstAnimation() {
         renderer.render(scene, camera);
     }
 
-    setTimeout(() => {
-        startTime = performance.now();
-    }, 2000);
-
     animate();
 
     window.addEventListener("resize", function () {
@@ -103,4 +97,20 @@ export default function firstAnimation() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
     });
+
+    renderFirstAnimation();
+
+    return true;
+}
+
+export function startTransitionToSecondAnimation() {
+    startTime = performance.now();
+}
+
+export async function renderFirstAnimation() {
+    if (document && document.querySelector("#screen-0")) { }
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio / 4);
+    renderer.domElement.style.imageRendering = 'pixelated';
+    document.querySelector("#screen-0")!.appendChild(renderer.domElement);
 }
