@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { firstAnimation } from './animations/firstAnimation';
 import { secondAnimation, changeTechModel } from './animations/secondAnimation';
 import Loading from './components/loading';
@@ -12,6 +12,8 @@ export default function Home() {
   const [navMenuVisible, setNavMenuVisible] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadingProject, setLoadingProject] = useState(false);
+
+  const projectImgRef = useRef<HTMLImageElement>(null);
 
   const techs = [
     { tech: "Javascript", color: "#F0DB4F", text: "Javascript foi a primeira linguagem de programação em que desenvolvi, ainda em 2022. Desde então, tenho usado-a quase que diariamente, seja em sua forma pura ou com seus frameworks e bibliotecas." },
@@ -40,6 +42,9 @@ export default function Home() {
     secondAnimation().then(() => {
       setTimeout(() => {
         setScreenIndex(1);
+        if (projectImgRef.current?.complete) {
+          handleImageLoad();
+        }
       }, 1000);
     });
   }, []);
@@ -82,9 +87,10 @@ export default function Home() {
 
   useEffect(() => {
     setLoadingProject(true);
-  }, [projectIndex])
+  }, [projectIndex]);
 
-  const handleImageLoad = () => {
+
+  function handleImageLoad() {
     setLoadingProject(false);
   };
 
@@ -241,7 +247,12 @@ export default function Home() {
           </h1>
           <div className='flex flex-row my-6'>
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={decreaseProjectIndex}>
-              <p>&#8249;</p>
+              <div className="w-0 h-0 
+            rotate-90
+              border-l-[12px] border-l-transparent
+              border-t-[15px] border-t-black
+              border-r-[12.5px] border-r-transparent">
+              </div>
             </button>
             <div className='flex flex-col'>
               <div className='w-72 h-72 lg:w-128 lg:h-96 bg-gray-800 rounded mx-auto'>
@@ -254,6 +265,7 @@ export default function Home() {
                   <Loading />
                 </div>
                 <img
+                  ref={projectImgRef}
                   src={projects[projectIndex].image}
                   className="h-full w-full object-cover border-2 border-gray-700"
                   style={{ display: loadingProject ? "none" : "flex" }}
@@ -262,7 +274,12 @@ export default function Home() {
               </div>
             </div>
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={increaseProjectIndex}>
-              <p>&#8250;</p>
+              <div className="w-0 h-0 
+            rotate-[-90deg]
+              border-l-[12px] border-l-transparent
+              border-t-[15px] border-t-black
+              border-r-[12.5px] border-r-transparent">
+              </div>
             </button>
           </div>
           <div className='flex flex-col h-48 lg:h-64 items-center justify-center'>
