@@ -109,11 +109,11 @@ export default function Home() {
       >
         <nav className='bg-black w-full h-16 flex justify-end lg:justify-center items-center'>
           <div className='max-w-xl w-full flex-row justify-between hidden lg:flex'>
-            <a className='text-white text-md pointer font-bold' href='#'>Sobre mim</a>
-            <a className='text-white text-md pointer font-bold' href='#screen-2'>Tecnologias</a>
-            <a className='text-white text-md pointer font-bold' href='#screen-3'>Experiências</a>
-            <a className='text-white text-md pointer font-bold' href='#screen-4'>Formação</a>
-            <a className='text-white text-md pointer font-bold' href='#screen-5'>Projetos</a>
+            <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#'>Sobre mim</a>
+            <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-2'>Tecnologias</a>
+            <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-3'>Experiências</a>
+            <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-4'>Formação</a>
+            <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-5'>Projetos</a>
           </div>
           <div className='border-2 border-gray-300 h-8 w-8 p-1 rounded flex flex-col justify-center content-between lg:hidden mx-2 cursor-pointer hover:bg-gray-800' onClick={() => setNavMenuVisible(prev => !prev)}>
             <div className='w-full h-1 bg-gray-300 rounded mb-1'></div>
@@ -145,7 +145,7 @@ export default function Home() {
           <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-128 md:h-128"></img>
+          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-128 md:h-128" alt="Meu avatar em 3D"></img>
           <h2 className="text-md md:text-xl lg:text-2xl text-center text-white my-2 px-4 max-w-lg">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
@@ -167,8 +167,8 @@ export default function Home() {
             </h2>
             <p className='text-gray-400 text-sm md:text-lg my-2 mx-8 text-center'>{techs[techIndex].text}</p>
           </div>
-          <button onClick={changeTechIndex} className='bg-gray-700 px-4 py-2 rounded-full text-white my-8'>
-            <h3 className='font-bold text-center text-lg bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent'>Próximo</h3>
+          <button onClick={changeTechIndex} className='bg-gray-700 h-20 w-40 rounded-full text-white my-8 transition hover:bg-neutral-900 hover:scale-105' button-name="Passar pra próxima tecnologia">
+            <h3 className='font-bold text-center text-xl bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent'>Próximo</h3>
           </button>
         </section>
         <section
@@ -178,19 +178,21 @@ export default function Home() {
           <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
             Minhas experiências profissionais
           </h1>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
+            <span className=''>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/bravo.png" className='w-10 h-10 mr-4'></img>
+              <img src="./logos/bravo.png" className='w-10 h-10 mr-4' alt="Logo da Bravo"></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Analista de Sistemas II - Bravo Serviços Logísticos</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
               </div>
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento e manutenção de aplicações web escaláveis, com foco em Angular no front-end e Node.js no back-end.</p>
+            </span>
           </div>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/codiub.png" className='w-10 h-10 mr-4'></img>
+              <img src="./logos/codiub.png" className='w-10 h-10 mr-4'alt="Logo da Codiub"></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Desenvolvedor de Sistemas Web Júnior - Codiub Solução Digital</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2024 - 12/2024)</p>
@@ -198,9 +200,9 @@ export default function Home() {
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento de aplicações web com linguagens e frameworks como: Angular, Java Spring Boot e Java ServerFaces (JSF).</p>
           </div>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/candido.png" className='w-10 h-10 mr-4'></img>
+              <img src="./logos/candido.png" className='w-10 h-10 mr-4'alt="Logo da Candido"></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Estagiário de Desenvolvimento Desktop - Cândido Empresarial</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2023 - 01/2024)</p>
@@ -208,6 +210,7 @@ export default function Home() {
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Construção de novas telas e recursos, bem como manutenção em sistemas empresariais desktop com banco de dados relacional.</p>
           </div>
+          
 
         </section>
         <section
@@ -217,9 +220,9 @@ export default function Home() {
           <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Escolaridade e formações
           </h1>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/iftm.png" className='w-10 h-10 mr-4'></img>
+              <img src="./logos/iftm.png" className='w-10 h-10 mr-4' alt="Logo da IFTM"></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Graduação em ADS - IFTM Campus Uberaba Parque Tecnológico</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(02/2023 - presente)</p>
@@ -227,9 +230,9 @@ export default function Home() {
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Atualmente estou no quinto período de Análise e Desenvolvimento de Sistemas pela IFTM.  Durante a graduação, adquiri conhecimentos em linguagens de programação, engenharia de software, banco de dados e metodologias ágeis. Também participei de projetos acadêmicos que fortaleceram minha capacidade de desenvolver aplicações robustas e inovadoras. (Previsão de Conclusão: 12/2025)</p>
           </div>
-          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6'>
+          <div className='w-80 md:w-full max-w-xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/senai.png" className='w-10 h-10 mr-4'></img>
+              <img src="./logos/senai.png" className='w-10 h-10 mr-4' alt="Logo da SENAI"></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Aprendizagem em Automação Industrial - SENAI</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(06/2021 - 06/2022)</p>
@@ -246,9 +249,9 @@ export default function Home() {
             Alguns dos meus projetos
           </h1>
           <div className='flex flex-row my-6'>
-            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={decreaseProjectIndex}>
+            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center transition hover:bg-gray-300 hover:scale-105' onClick={decreaseProjectIndex} button-name="Passar pro projeto anterior">
               <div className="w-0 h-0 
-            rotate-90
+              rotate-90
               border-l-[12px] border-l-transparent
               border-t-[15px] border-t-black
               border-r-[12.5px] border-r-transparent">
@@ -265,6 +268,7 @@ export default function Home() {
                   <Loading />
                 </div>
                 <img
+                  alt={projects[projectIndex].name}
                   ref={projectImgRef}
                   src={projects[projectIndex].image}
                   className="h-full w-full object-cover border-2 border-gray-700"
@@ -273,9 +277,9 @@ export default function Home() {
                 />
               </div>
             </div>
-            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center' onClick={increaseProjectIndex}>
+            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center hover:bg-gray-300 hover:scale-105' onClick={increaseProjectIndex} button-name="Passar pro próximo projeto">
               <div className="w-0 h-0 
-            rotate-[-90deg]
+              rotate-[-90deg]
               border-l-[12px] border-l-transparent
               border-t-[15px] border-t-black
               border-r-[12.5px] border-r-transparent">
@@ -295,16 +299,16 @@ export default function Home() {
               <p style={{ backgroundColor: index === projectIndex ? 'white' : 'transparent' }} className='h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-white border-2 mx-2 transition-all cursor-pointer' key={index} onClick={() => setProjectIndex(index)}></p>
             )}
           </div>
-          <a className='bg-black flex flex-row w-64 h-20 rounded-full items-center justify-center my-6' href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer">
+          <a className='bg-black flex flex-row w-64 h-20 rounded-full items-center justify-center my-6 transition hover:bg-neutral-900 hover:scale-105 cursor-pointer' href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer">
             <h3 className='text-white font-bold text-lg'>Veja mais no Github</h3>
-            <img src="./logos/github.png" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2'></img>
+            <img src="./logos/github.png" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github"></img>
           </a>
         </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
           <p className='text-white text-md'>© 2025 - Ruan Emanuell</p>
           <div className='w-32 h-8 flex flex-row justify-end'>
-            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.png" className='w-full h-full bg-white rounded-full border-white border-2'></img></a>
-            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.png" className='w-full h-full bg-white rounded-full border-white border-2'></img></a>
+            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.png" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Github" aria-label="Link do meu Github"></img></a>
+            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.png" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Linkedin" aria-label="Link do meu Linkedin"></img></a>
           </div>
         </footer>
       </div>
