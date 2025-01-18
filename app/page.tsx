@@ -136,7 +136,7 @@ export default function Home() {
           <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.webp" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D" loading='lazy'></img>
+          <img src="./image-border.webp" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D"></img>
           <h2 className="text-md md:text-xl lg:text-3xl text-center text-white my-2 px-4 max-w-2xl">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
@@ -262,6 +262,7 @@ export default function Home() {
                   alt={projects[projectIndex].name}
                   ref={projectImgRef}
                   src={projects[projectIndex].image}
+                  loading="lazy"
                   className="h-full w-full object-cover border-2 border-gray-700"
                   style={{ display: loadingProject ? "none" : "flex" }}
                   onLoad={handleImageLoad}
