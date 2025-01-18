@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import { firstAnimation } from './animations/firstAnimation';
-import { secondAnimation, changeTechModel } from './animations/secondAnimation';
+import { firstAnimation, changeTechModel } from './animations/firstAnimation';
 import Loading from './components/loading';
 
 export default function Home() {
-  const [screenIndex, setScreenIndex] = useState(0);
   const [techIndex, setTechIndex] = useState(0);
   const [projectIndex, setProjectIndex] = useState(0);
   const [navMenuVisible, setNavMenuVisible] = useState(false);
@@ -35,18 +33,16 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    firstAnimation().then(() => {
-      setLoading(false);
-    });
-
-    secondAnimation().then(() => {
-      setTimeout(() => {
-        setScreenIndex(1);
+    async function startAnimation(){
+      firstAnimation().then(() => {
+        setLoading(false);
         if (projectImgRef.current?.complete) {
           handleImageLoad();
         }
-      }, 1000);
-    });
+      });
+    }
+
+    startAnimation();
   }, []);
 
   function changeTechIndex() {
@@ -98,14 +94,9 @@ export default function Home() {
   return (
     <>
       {loading ? <div className='h-screen w-screen flex justify-center items-center'><Loading /></div> : <></>}
-      <section
-        id="screen-0"
-        className={`${screenIndex === 0 && !loading ? 'flex' : 'hidden'} h-full w-full`}
-      >
-      </section>
 
       <div
-        className={`${screenIndex === 1 && !loading ? 'flex' : 'hidden'} flex-col`}
+        className={`${!loading ? 'flex' : 'hidden'} flex-col`}
       >
         <nav className='bg-black w-full h-16 flex justify-end lg:justify-center items-center'>
           <div className='max-w-xl w-full flex-row justify-between hidden lg:flex'>
@@ -180,19 +171,19 @@ export default function Home() {
           </h1>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <span className=''>
-            <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/bravo.webp" className='w-10 h-10 mr-4' alt="Logo da Bravo" loading='lazy'></img>
-              <div className='flex flex-col'>
-                <h1 className='text-lg lg:text-2xl text-white font-bold'>Analista de Sistemas II - Bravo Serviços Logísticos</h1>
-                <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
+              <div className='flex flex-row items-center w-full px-6'>
+                <img src="./logos/bravo.webp" className='w-10 h-10 mr-4' alt="Logo da Bravo" loading='lazy'></img>
+                <div className='flex flex-col'>
+                  <h1 className='text-lg lg:text-2xl text-white font-bold'>Analista de Sistemas II - Bravo Serviços Logísticos</h1>
+                  <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
+                </div>
               </div>
-            </div>
-            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento e manutenção de aplicações web escaláveis, com foco em Angular no front-end e Node.js no back-end.</p>
+              <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Desenvolvimento e manutenção de aplicações web escaláveis, com foco em Angular no front-end e Node.js no back-end.</p>
             </span>
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/codiub.webp" className='w-10 h-10 mr-4'alt="Logo da Codiub" loading='lazy'></img>
+              <img src="./logos/codiub.webp" className='w-10 h-10 mr-4' alt="Logo da Codiub" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Desenvolvedor de Sistemas Web Júnior - Codiub Solução Digital</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2024 - 12/2024)</p>
@@ -202,7 +193,7 @@ export default function Home() {
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/candido.webp" className='w-10 h-10 mr-4'alt="Logo da Candido" loading='lazy'></img>
+              <img src="./logos/candido.webp" className='w-10 h-10 mr-4' alt="Logo da Candido" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Estagiário de Desenvolvimento Desktop - Cândido Empresarial</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2023 - 01/2024)</p>
@@ -210,7 +201,7 @@ export default function Home() {
             </div>
             <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Construção de novas telas e recursos, bem como manutenção em sistemas empresariais desktop com banco de dados relacional.</p>
           </div>
-          
+
 
         </section>
         <section
@@ -307,8 +298,8 @@ export default function Home() {
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
           <p className='text-white text-md'>© 2025 - Ruan Emanuell</p>
           <div className='w-32 h-8 flex flex-row justify-end'>
-            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
-            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
+            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-8 h-8 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
+            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-8 h-8 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
           </div>
         </footer>
       </div>
