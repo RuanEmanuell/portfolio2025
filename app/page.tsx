@@ -26,12 +26,12 @@ export default function Home() {
   ];
 
   const projects = [
-    { name: "ReadMiner", image: "./projects/1.png", text: "Um projeto de IA que analisa contratos. Você insere um contrato de qualquer tipo e a IA gera relatórios com o tipo do contrato, as entidades envolvidas, os valores numéricos presentes, entre outros dados." },
-    { name: "HardwareMaster", image: "./projects/2.png", text: "Ferramenta projetada para simplificar o processo de montagem de PCs personalizados, para ajudá-lo a escolher os melhores componentes com base no seu orçamento." },
-    { name: "WR Consultoria", image: "./projects/3.png", text: "Uma landing page para uma empresa de consultoria, sendo este um projeto feito como freelance." },
-    { name: "HemoWeb", image: "./projects/4.png", text: "Um sistema de cadastro de doação de sangue. O sistema tem como objetivo facilitar o controle das doações, gerenciar os cadastros de doadores e receptores, e auxiliar na organização de campanhas de coleta de sangue. Ainda em desenvolvimento." },
-    { name: "WaterReminder", image: "./projects/5.png", text: "Um aplicativo totalmente configurável que te ajuda a lembrar de beber água. Disponível na Google Play para Android." },
-    { name: "VisAçougue", image: "./projects/6.png", text: "Aplicativo móvel informativo e simulador de avaliações de açougues baseado nas normas de fiscalização da Vigilância Sanitária, um projeto de iniciação científica financiado por bolsa desenvolvido em parceria com o IFTM." },
+    { name: "ReadMiner", image: "./projects/1.webp", text: "Um projeto de IA que analisa contratos. Você insere um contrato de qualquer tipo e a IA gera relatórios com o tipo do contrato, as entidades envolvidas, os valores numéricos presentes, entre outros dados." },
+    { name: "HardwareMaster", image: "./projects/2.webp", text: "Ferramenta projetada para simplificar o processo de montagem de PCs personalizados, para ajudá-lo a escolher os melhores componentes com base no seu orçamento." },
+    { name: "WR Consultoria", image: "./projects/3.webp", text: "Uma landing page para uma empresa de consultoria, sendo este um projeto feito como freelance." },
+    { name: "HemoWeb", image: "./projects/4.webp", text: "Um sistema de cadastro de doação de sangue. O sistema tem como objetivo facilitar o controle das doações, gerenciar os cadastros de doadores e receptores, e auxiliar na organização de campanhas de coleta de sangue. Ainda em desenvolvimento." },
+    { name: "WaterReminder", image: "./projects/5.webp", text: "Um aplicativo totalmente configurável que te ajuda a lembrar de beber água. Disponível na Google Play para Android." },
+    { name: "VisAçougue", image: "./projects/6.webp", text: "Aplicativo móvel informativo e simulador de avaliações de açougues baseado nas normas de fiscalização da Vigilância Sanitária, um projeto de iniciação científica financiado por bolsa desenvolvido em parceria com o IFTM." },
   ]
 
   useEffect(() => {
@@ -145,7 +145,7 @@ export default function Home() {
           <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.png" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D"></img>
+          <img src="./image-border.webp" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D" loading='lazy'></img>
           <h2 className="text-md md:text-xl lg:text-3xl text-center text-white my-2 px-4 max-w-2xl">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
@@ -181,7 +181,7 @@ export default function Home() {
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <span className=''>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/bravo.png" className='w-10 h-10 mr-4' alt="Logo da Bravo"></img>
+              <img src="./logos/bravo.webp" className='w-10 h-10 mr-4' alt="Logo da Bravo" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Analista de Sistemas II - Bravo Serviços Logísticos</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/codiub.png" className='w-10 h-10 mr-4'alt="Logo da Codiub"></img>
+              <img src="./logos/codiub.webp" className='w-10 h-10 mr-4'alt="Logo da Codiub" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Desenvolvedor de Sistemas Web Júnior - Codiub Solução Digital</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2024 - 12/2024)</p>
@@ -202,7 +202,7 @@ export default function Home() {
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/candido.png" className='w-10 h-10 mr-4'alt="Logo da Candido"></img>
+              <img src="./logos/candido.webp" className='w-10 h-10 mr-4'alt="Logo da Candido" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Estagiário de Desenvolvimento Desktop - Cândido Empresarial</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2023 - 01/2024)</p>
@@ -222,7 +222,7 @@ export default function Home() {
           </h1>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/iftm.png" className='w-10 h-10 mr-4' alt="Logo da IFTM"></img>
+              <img src="./logos/iftm.webp" className='w-10 h-10 mr-4' alt="Logo da IFTM" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Graduação em ADS - IFTM Campus Uberaba Parque Tecnológico</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(02/2023 - presente)</p>
@@ -232,7 +232,7 @@ export default function Home() {
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/senai.png" className='w-10 h-10 mr-4' alt="Logo da SENAI"></img>
+              <img src="./logos/senai.webp" className='w-10 h-10 mr-4' alt="Logo da SENAI" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Aprendizagem em Automação Industrial - SENAI</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(06/2021 - 06/2022)</p>
@@ -287,10 +287,10 @@ export default function Home() {
             </button>
           </div>
           <div className='flex flex-col h-48 lg:h-64 items-center justify-center'>
-            <h2 className="text-lg lg:text-2xl text-center font-bold text-white">
+            <h2 className="text-lg lg:text-2xl text-center font-bold text-white my-2">
               {projects[projectIndex].name}
             </h2>
-            <p className="text-sm lg:text-lg text-center italic text-gray-300 my-2 mx-8 max-w-md">
+            <p className="text-sm lg:text-lg text-center italic text-gray-300 mx-8 max-w-md">
               {projects[projectIndex].text}
             </p>
           </div>
@@ -301,14 +301,14 @@ export default function Home() {
           </div>
           <a className='bg-black flex flex-row w-64 h-20 rounded-full items-center justify-center my-6 transition hover:bg-neutral-900 hover:scale-105 cursor-pointer' href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer">
             <h3 className='text-white font-bold text-lg'>Veja mais no Github</h3>
-            <img src="./logos/github.png" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github"></img>
+            <img src="./logos/github.webp" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" loading='lazy'></img>
           </a>
         </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
           <p className='text-white text-md'>© 2025 - Ruan Emanuell</p>
           <div className='w-32 h-8 flex flex-row justify-end'>
-            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.png" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Github" aria-label="Link do meu Github"></img></a>
-            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.png" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Linkedin" aria-label="Link do meu Linkedin"></img></a>
+            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
+            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-8 h-8 bg-white rounded-full border-white border-2'alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
           </div>
         </footer>
       </div>
