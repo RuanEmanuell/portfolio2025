@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/Addons.js';
 
 let me: THREE.Group<THREE.Object3DEventMap> | undefined;
@@ -12,9 +12,7 @@ let mixer: THREE.AnimationMixer | undefined;
 
 export async function secondAnimation() {
     const renderer = new THREE.WebGLRenderer();
-
     const clock = new THREE.Clock();
-
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -31,8 +29,6 @@ export async function secondAnimation() {
     directionalLight.shadow.camera.near = 0.5;
     directionalLight.shadow.camera.far = 50;
     scene.add(directionalLight);
-
-    let canvasWidth: number = renderer.domElement.width;
 
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("./model/draco/");
@@ -56,6 +52,7 @@ export async function secondAnimation() {
     loader.load('./model/angular.glb', function (gltf) {
         angular = gltf.scene;
         angular.position.y = -2;
+        angular.position.z = -2;
         angular.scale.set(0.4, 0.4, 0.4);
         scene.add(angular);
     });
@@ -66,7 +63,6 @@ export async function secondAnimation() {
         java.scale.set(0.4, 0.4, 0.4);
         scene.add(java);
     });
-    
 
     loader.load('./model/me.glb', function (gltf) {
         me = gltf.scene;
@@ -75,8 +71,6 @@ export async function secondAnimation() {
         scene.add(me);
 
         mixer = new THREE.AnimationMixer(me);
-        
-
         if (gltf.animations.length > 0) {
             gltf.animations.forEach((clip) => {
                 const action = mixer!.clipAction(clip);
@@ -87,35 +81,37 @@ export async function secondAnimation() {
 
     function animate() {
         requestAnimationFrame(animate);
-
-        if(react){
-            react!.position.x += 0.015;
-            if(react.position.x > canvasWidth! / 20.0){
-                react!.position.x = (canvasWidth! / 20.0 * -1);
-            } 
-        }
-
-        if(java){
-            java!.position.x += 0.016;
-            if(java.position.x > canvasWidth! / 20.0){
-                java!.position.x = (canvasWidth! / 20.0 * -1);
-            } 
-        }
-
-        if(angular){
-            angular!.position.x -= 0.017;
-            if(angular.position.x < (canvasWidth! / 20.0 * - 1)){
-                angular!.position.x = (canvasWidth! / 20.0);
-            } 
-        }
-
-        if(node){
-            node!.position.x -= 0.018;
-            if(node.position.x < (canvasWidth! / 20.0 * - 1)){
-                node!.position.x = (canvasWidth! / 20.0);
-            } 
-        }
         
+        const canvasWidth = renderer.domElement.width;
+
+        if (react) {
+            react!.position.x += 0.015;
+            if (react.position.x > canvasWidth / 25.0) {
+                react!.position.x = -(canvasWidth / 25.0);
+            }
+        }
+
+        if (java) {
+            java!.position.x += 0.016;
+            if (java.position.x > canvasWidth / 25.0) {
+                java!.position.x = -(canvasWidth / 25.0);
+            }
+        }
+
+        if (angular) {
+            angular!.position.x -= 0.017;
+            if (angular.position.x < -(canvasWidth / 25.0)) {
+                angular!.position.x = canvasWidth / 25.0;
+            }
+        }
+
+        if (node) {
+            node!.position.x -= 0.018;
+            if (node.position.x < -(canvasWidth / 25.0)) {
+                node!.position.x = canvasWidth / 25.0;
+            }
+        }
+
         const delta = clock.getDelta();
         if (mixer) mixer.update(delta);
         renderer.render(scene, camera);
@@ -124,7 +120,6 @@ export async function secondAnimation() {
     animate();
 
     window.addEventListener("resize", function () {
-        canvasWidth = renderer.domElement.width;
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(window.devicePixelRatio / 4);
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -138,5 +133,4 @@ export async function secondAnimation() {
     if (document.querySelector("#me-3dmodel")) {
         document.querySelector("#me-3dmodel")!.appendChild(renderer.domElement);
     }
-    
 }
