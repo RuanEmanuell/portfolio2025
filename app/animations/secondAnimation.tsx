@@ -1,7 +1,6 @@
-"use client"
-
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { DRACOLoader } from 'three/examples/jsm/Addons.js';
 
 let me: THREE.Group<THREE.Object3DEventMap> | undefined;
 let react: THREE.Group<THREE.Object3DEventMap> | undefined;
@@ -35,8 +34,11 @@ export async function secondAnimation() {
 
     let canvasWidth: number = renderer.domElement.width;
 
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("./model/draco/");
+  
     const loader = new GLTFLoader();
-
+    loader.setDRACOLoader(dracoLoader);
     
     loader.load('./model/react.glb', function (gltf) {
         react = gltf.scene;

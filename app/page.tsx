@@ -76,12 +76,10 @@ export default function Home() {
   useEffect(() => {
     if (navMenuVisible) {
       document.body.style.overflow = 'hidden';
-      document.querySelector("#hand")?.classList.remove("hand-animate");
-      document.querySelector("#hand")?.classList.remove("absolute");
+      document.querySelector("#hand")?.classList.add("invisible");
     } else {
       document.body.style.overflow = 'visible';
-      document.querySelector("#hand")?.classList.add("hand-animate");
-      document.querySelector("#hand")?.classList.add("absolute");
+      document.querySelector("#hand")?.classList.remove("invisible");
     }
   }, [navMenuVisible])
 
@@ -124,7 +122,7 @@ export default function Home() {
             <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-3'>Experiências</a>
             <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-4'>Formação</a>
             <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-5'>Projetos</a>
-            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-5'>Contato</a>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-6'>Contato</a>
           </div>
         </section>
         <section
@@ -253,7 +251,7 @@ export default function Home() {
             Alguns dos meus projetos
           </h1>
           <div className='flex flex-row justify-center my-2'>
-            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center transition hover:bg-gray-300 hover:scale-105' onClick={decreaseProjectIndex} button-name="Passar pro projeto anterior">
+            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center transition hover:bg-gray-300 hover:scale-105' onClick={decreaseProjectIndex} aria-label="Passar pro projeto anterior">
               <div className="w-0 h-0 
               rotate-90
               border-l-[12px] border-l-transparent
@@ -283,7 +281,7 @@ export default function Home() {
 
               </div>
             </div>
-            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center hover:bg-gray-300 hover:scale-105' onClick={increaseProjectIndex} button-name="Passar pro próximo projeto">
+            <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center hover:bg-gray-300 hover:scale-105' onClick={increaseProjectIndex} aria-label="Passar pro próximo projeto">
               <div className="w-0 h-0 
               rotate-[-90deg]
               border-l-[12px] border-l-transparent
