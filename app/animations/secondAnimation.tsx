@@ -33,8 +33,7 @@ export async function secondAnimation() {
     directionalLight.shadow.camera.far = 50;
     scene.add(directionalLight);
 
-    let canvasWidth: number = 0;
-    let canvasHeight: number = 0;
+    let canvasWidth: number = renderer.domElement.width;
 
     const loader = new GLTFLoader();
 
@@ -88,30 +87,30 @@ export async function secondAnimation() {
         requestAnimationFrame(animate);
 
         if(react){
-            react!.position.x += 0.01;
-            if(react.position.x > canvasWidth! / 30){
-                react!.position.x = (canvasWidth! / 30 * -1);
+            react!.position.x += 0.015;
+            if(react.position.x > canvasWidth! / 20.0){
+                react!.position.x = (canvasWidth! / 20.0 * -1);
             } 
         }
 
         if(java){
-            java!.position.x += 0.011;
-            if(java.position.x > canvasWidth! / 30){
-                java!.position.x = (canvasWidth! / 30 * -1);
+            java!.position.x += 0.016;
+            if(java.position.x > canvasWidth! / 20.0){
+                java!.position.x = (canvasWidth! / 20.0 * -1);
             } 
         }
 
         if(angular){
-            angular!.position.x -= 0.012;
-            if(angular.position.x < (canvasWidth! / 30 * - 1)){
-                angular!.position.x = (canvasWidth! / 30);
+            angular!.position.x -= 0.017;
+            if(angular.position.x < (canvasWidth! / 20.0 * - 1)){
+                angular!.position.x = (canvasWidth! / 20.0);
             } 
         }
 
         if(node){
-            node!.position.x -= 0.013;
-            if(node.position.x < (canvasWidth! / 30 * - 1)){
-                node!.position.x = (canvasWidth! / 30);
+            node!.position.x -= 0.018;
+            if(node.position.x < (canvasWidth! / 20.0 * - 1)){
+                node!.position.x = (canvasWidth! / 20.0);
             } 
         }
         
@@ -124,7 +123,6 @@ export async function secondAnimation() {
 
     window.addEventListener("resize", function () {
         canvasWidth = renderer.domElement.width;
-        canvasHeight = renderer.domElement.height;
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(window.devicePixelRatio / 4);
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -138,7 +136,5 @@ export async function secondAnimation() {
     if (document.querySelector("#me-3dmodel")) {
         document.querySelector("#me-3dmodel")!.appendChild(renderer.domElement);
     }
-
-    canvasWidth = renderer.domElement.width;
-    canvasHeight = renderer.domElement.height;
+    
 }

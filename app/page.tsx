@@ -34,7 +34,7 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    async function startAnimation(){
+    async function startAnimation() {
       firstAnimation();
       secondAnimation().then(() => {
         setLoading(false);
@@ -77,9 +77,11 @@ export default function Home() {
     if (navMenuVisible) {
       document.body.style.overflow = 'hidden';
       document.querySelector("#hand")?.classList.remove("hand-animate");
+      document.querySelector("#hand")?.classList.remove("absolute");
     } else {
       document.body.style.overflow = 'visible';
       document.querySelector("#hand")?.classList.add("hand-animate");
+      document.querySelector("#hand")?.classList.add("absolute");
     }
   }, [navMenuVisible])
 
@@ -107,6 +109,7 @@ export default function Home() {
             <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-3'>Experiências</a>
             <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-4'>Formação</a>
             <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-5'>Projetos</a>
+            <a className='text-white text-md pointer font-bold transition hover:scale-105 cursor-pointer' href='#screen-6'>Contato</a>
           </div>
           <div className='border-2 border-gray-300 h-8 w-8 p-1 rounded flex flex-col justify-center content-between lg:hidden mx-2 cursor-pointer hover:bg-gray-800' onClick={() => setNavMenuVisible(prev => !prev)}>
             <div className='w-full h-1 bg-gray-300 rounded mb-1'></div>
@@ -121,31 +124,32 @@ export default function Home() {
             <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-3'>Experiências</a>
             <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-4'>Formação</a>
             <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-5'>Projetos</a>
+            <a className='text-white text-lg pointer font-bold rounded w-44 h-16 text-center' href='#screen-5'>Contato</a>
           </div>
         </section>
         <section
           id="screen-1"
           className="transition-all bg-[#0D1117] flex flex-col items-center py-8"
         >
-<div className="flex justify-center flex-col items-center relative">
-  <div className="flex items-center relative w-80 md:w-128">
-    <h1 className="text-3xl md:text-4xl text-center font-bold text-white mt-2 mx-2">
-      Olá, meu nome é Ruan Emanuell!
-    </h1>
-    <span
-      className="text-3xl md:text-4xl ml-2 absolute right-[2rem] top-[1.25rem] md:right-[9rem] hand-animate"
-      id="hand"
-    >
-      👋
-    </span>
-  </div>
-</div>
+          <div className="flex justify-center flex-col items-center">
+            <div className="flex items-center w-80 md:w-128">
+              <h1 className="text-3xl md:text-4xl text-center font-bold text-white mt-2 mx-2">
+                Olá, meu nome é Ruan Emanuell!
+              </h1>
+              <span
+                className="text-3xl md:text-4xl ml-2 absolute right-[2rem] top-[1.25rem] md:right-[9rem] hand-animate"
+                id="hand"
+              >
+                👋
+              </span>
+            </div>
+          </div>
 
 
           <h2 className="text-lg md:text-xl text-center lg:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
-          <img src="./image-border.webp" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D"></img>
+          <img src="./image.webp" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-md border-white border-8 my-4" alt="Minha foto"></img>
           <h2 className="text-md md:text-lg text-center text-white my-2 px-4 max-w-2xl">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
@@ -192,7 +196,7 @@ export default function Home() {
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/codiub.webp" className='w-10 h-10 mr-4' alt="Logo da Codiub" loading='lazy'></img>
+              <img src="./logos/codiub.webp" className='w-10 h-8 mr-4' alt="Logo da Codiub" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Desenvolvedor de Sistemas Web Júnior - Codiub Solução Digital</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2024 - 12/2024)</p>
@@ -202,7 +206,7 @@ export default function Home() {
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
-              <img src="./logos/candido.webp" className='w-10 h-10 mr-4' alt="Logo da Candido" loading='lazy'></img>
+              <img src="./logos/candido.webp" className='w-10 h-7 mr-4' alt="Logo da Candido" loading='lazy'></img>
               <div className='flex flex-col'>
                 <h1 className='text-lg lg:text-2xl text-white font-bold'>Estagiário de Desenvolvimento Desktop - Cândido Empresarial</h1>
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(07/2023 - 01/2024)</p>
@@ -271,10 +275,12 @@ export default function Home() {
                   alt={projects[projectIndex].name}
                   ref={projectImgRef}
                   src={projects[projectIndex].image}
+                  loading="lazy"
                   className="h-full w-full object-cover border-2 border-gray-700"
-                  style={{ display: loadingProject ? "none" : "flex" }}
+                  style={{ visibility: loadingProject ? "hidden" : "visible" }}
                   onLoad={handleImageLoad}
                 />
+
               </div>
             </div>
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-10 w-10 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center hover:bg-gray-300 hover:scale-105' onClick={increaseProjectIndex} button-name="Passar pro próximo projeto">
@@ -311,8 +317,11 @@ export default function Home() {
           <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent mx-2">
             Entre em contato comigo
           </h1>
+          <h2 className="text-md md:text-lg text-center text-white my-2 px-4 max-w-2xl">
+            Sou apaixonado por criar soluções inteligentes e trabalhar em projetos desafiadores. Se você deseja colaborar, discutir uma ideia ou apenas trocar experiências sobre desenvolvimento, ficarei feliz em ouvir você! Logo abaixo, no rodapé da página, você pode encontrar minhas redes sociais. Obrigado pela atenção e até mais! 🚀
+          </h2>
           <div id="me-3dmodel" className='w-80 h-96 md:w-128 lg:w-full max-w-2xl mx-auto  flex justify-center items-center mt-6'></div>
-          
+
 
         </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
