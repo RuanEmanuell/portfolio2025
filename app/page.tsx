@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { firstAnimation, changeTechModel } from './animations/firstAnimation';
 import Loading from './components/loading';
+import { secondAnimation } from './animations/secondAnimation';
 
 export default function Home() {
   const [techIndex, setTechIndex] = useState(0);
@@ -34,7 +35,8 @@ export default function Home() {
 
   useEffect(() => {
     async function startAnimation(){
-      firstAnimation().then(() => {
+      firstAnimation();
+      secondAnimation().then(() => {
         setLoading(false);
         if (projectImgRef.current?.complete) {
           handleImageLoad();
@@ -125,27 +127,34 @@ export default function Home() {
           id="screen-1"
           className="transition-all bg-[#0D1117] flex flex-col items-center py-8"
         >
-          <div className='flex justify-center flex-row'>
-            <h1 className="text-xl md:text-3xl lg:text-5xl text-center font-bold text-white mt-2">
-              Olá, meu nome é Ruan Emanuell!
-            </h1>
-            <h1 className="text-xl md:text-3xl lg:text-5xl text-center font-bold text-white mt-2 ml-2 hand-animate" id="hand">
-              👋
-            </h1>
-          </div>
-          <h2 className="text-md text-center md:text-2xl my-2 italic font-semibold text-gray-300">
+<div className="flex justify-center flex-col items-center relative">
+  <div className="flex items-center relative w-80 md:w-128">
+    <h1 className="text-3xl md:text-4xl text-center font-bold text-white mt-2 mx-2">
+      Olá, meu nome é Ruan Emanuell!
+    </h1>
+    <span
+      className="text-3xl md:text-4xl ml-2 absolute right-[2rem] top-[1.25rem] md:right-[9rem] hand-animate"
+      id="hand"
+    >
+      👋
+    </span>
+  </div>
+</div>
+
+
+          <h2 className="text-lg md:text-xl text-center lg:text-2xl my-2 italic font-semibold text-gray-300">
             Desenvolvedor Fullstack
           </h2>
           <img src="./image-border.webp" className="rounded-full w-80 h-80 md:w-full md:h-full max-w-lg" alt="Meu avatar em 3D"></img>
-          <h2 className="text-md md:text-xl lg:text-3xl text-center text-white my-2 px-4 max-w-2xl">
+          <h2 className="text-md md:text-lg text-center text-white my-2 px-4 max-w-2xl">
             Apaixonado por programação desde 2022, atualmente atuo como Desenvolvedor Web em tempo integral.
           </h2>
         </section>
         <section
           id="screen-2"
-          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8"
+          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8 overflow-hidden"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
+          <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent mx-2">
             Algumas tecnologias que eu conheço
           </h1>
           <div id="language-3dmodel" className='w-80 h-80 md:w-128 lg:w-full max-w-2xl md:h-96 mx-auto rounded-x-lg border-x-2 border-t-2 border-gray-700 bg-[#0D1117] flex justify-center items-center mt-6'></div>
@@ -159,14 +168,14 @@ export default function Home() {
             <p className='text-gray-400 text-sm md:text-lg my-2 mx-8 text-center'>{techs[techIndex].text}</p>
           </div>
           <button onClick={changeTechIndex} className='bg-gray-700 h-20 w-40 rounded-full text-white my-8 transition hover:bg-neutral-900 hover:scale-105' button-name="Passar pra próxima tecnologia">
-            <h3 className='font-bold text-center text-xl bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent'>Próximo</h3>
+            <h3 className='font-bold text-center text-lg lg:text-xl bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent'>Próximo</h3>
           </button>
         </section>
         <section
           id="screen-3"
           className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
+          <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent mx-2">
             Minhas experiências profissionais
           </h1>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
@@ -208,7 +217,7 @@ export default function Home() {
           id="screen-4"
           className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
+          <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent mx-2">
             Escolaridade e formações
           </h1>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
@@ -236,7 +245,7 @@ export default function Home() {
           id="screen-5"
           className="mx-auto bg-[#0D1117] h-full w-full flex items-center flex-col py-8"
         >
-          <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent mb-4">
+          <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent mb-4 mx-2">
             Alguns dos meus projetos
           </h1>
           <div className='flex flex-row justify-center my-2'>
@@ -295,11 +304,22 @@ export default function Home() {
             <img src="./logos/github.webp" className='ml-2 w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" loading='lazy'></img>
           </a>
         </section>
+        <section
+          id="screen-6"
+          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8 overflow-hidden"
+        >
+          <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent mx-2">
+            Entre em contato comigo
+          </h1>
+          <div id="me-3dmodel" className='w-80 h-96 md:w-128 lg:w-full max-w-2xl mx-auto  flex justify-center items-center mt-6'></div>
+          
+
+        </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
-          <p className='text-white text-md'>© 2025 - Ruan Emanuell</p>
-          <div className='w-32 h-8 flex flex-row justify-end'>
-            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-8 h-8 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
-            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-8 h-8 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
+          <p className='text-white text-lg'>© 2025 - Ruan Emanuell</p>
+          <div className='w-32 h-8 flex flex-row justify-end items-center'>
+            <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
+            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
           </div>
         </footer>
       </div>

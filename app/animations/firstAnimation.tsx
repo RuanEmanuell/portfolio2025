@@ -55,7 +55,7 @@ export async function firstAnimation() {
             } else {
                 models[i].model!.position.x = 100;
             }
-            scene.add(gltf.scene);
+            scene.add(models[i].model!);
         });
     }
 
