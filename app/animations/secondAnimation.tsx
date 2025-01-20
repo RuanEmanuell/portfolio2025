@@ -85,7 +85,7 @@ export async function secondAnimation() {
         }
     });
 
-    let movingUp = { angular: true, java: true, node: true, react: true };
+    const movingUp = { angular: true, java: true, node: true, react: true };
 
     function animate() {
         requestAnimationFrame(animate);
