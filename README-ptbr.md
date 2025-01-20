@@ -38,14 +38,14 @@ You can acess it <a href="https://ruanemanuell.dev.br">here</a>
     </tr>
 </table>
 
-### How to run 🏃
+### Como rodar 🏃
 
      Clone o repositório.
      Instale as dependências com 'npm install'.
      Inicie o Next com 'npm run dev'.
      Accesse http://localhost:3000 no seu navegador.
     
-### Here are some images of the project running ⚡️: 
+### Aqui estão algumas imagens do projeto rodando ⚡️: 
 ![image](https://github.com/user-attachments/assets/24614697-2193-4b0c-8e7c-0b051ec5a235)
 ![image](https://github.com/user-attachments/assets/ae5792b8-3d61-4f20-ab3c-d18d57b2c08b)
 
