@@ -38,36 +38,42 @@ export async function secondAnimation() {
     
     loader.load('./model/react.glb', function (gltf) {
         react = gltf.scene;
-        react.scale.set(0.4, 0.4, 0.4);
+        react.position.x = 4;
+        react.position.y = -4;
+        react.scale.set(0.7, 0.7, 0.7);
         scene.add(react);
     });
 
     loader.load('./model/node.glb', function (gltf) {
         node = gltf.scene;
-        node.position.y = 1;
-        node.scale.set(0.4, 0.4, 0.4);
+        node.position.x = 4;
+        node.position.y = 2;
+        node.scale.set(0.7, 0.7, 0.7);
         scene.add(node);
     });
 
     loader.load('./model/angular.glb', function (gltf) {
         angular = gltf.scene;
-        angular.position.y = -2;
+        angular.position.x = -5;
+        angular.position.y = 0;
         angular.position.z = -2;
-        angular.scale.set(0.4, 0.4, 0.4);
+        angular.scale.set(0.7, 0.7, 0.7);
         scene.add(angular);
     });
 
     loader.load('./model/java.glb', function (gltf) {
         java = gltf.scene;
-        java.position.y = -3;
-        java.scale.set(0.4, 0.4, 0.4);
+        java.position.x = -4;
+        java.position.y = -5;
+        java.position.z = -2;
+        java.scale.set(0.7, 0.7, 0.7);
         scene.add(java);
     });
 
     loader.load('./model/me.glb', function (gltf) {
         me = gltf.scene;
-        me.scale.set(1.4, 1.4, 1.4);
-        me.position.y = -8;
+        me.scale.set(2.5, 2.5, 2.5);
+        me.position.y = -14;
         scene.add(me);
 
         mixer = new THREE.AnimationMixer(me);
@@ -79,38 +85,66 @@ export async function secondAnimation() {
         }
     });
 
+    let movingUp = { angular: true, java: true, node: true, react: true };
+
     function animate() {
         requestAnimationFrame(animate);
-
-        const canvasWidth = renderer.domElement.width;
+    
+        if (angular) {
+            if (movingUp.angular) {
+                angular.position.y += 0.01; 
+                if (angular.position.y >= 0) { 
+                    movingUp.angular = false;
+                }
+            } else {
+                angular.position.y -= 0.01; 
+                if (angular.position.y <= -1) { 
+                    movingUp.angular= true;
+                }
+            }
+        }    
 
         if (react) {
-            react!.position.x += 0.015;
-            if (react.position.x > canvasWidth / 25.0) {
-                react!.position.x = -(canvasWidth / 25.0);
+            if (movingUp.react) {
+                react.position.y += 0.011; 
+                if (react.position.y >= -3) { 
+                    movingUp.react = false;
+                }
+            } else {
+                react.position.y -= 0.011; 
+                if (react.position.y <= -4) { 
+                    movingUp.react= true;
+                }
             }
-        }
-
-        if (java) {
-            java!.position.x += 0.016;
-            if (java.position.x > canvasWidth / 25.0) {
-                java!.position.x = -(canvasWidth / 25.0);
-            }
-        }
-
-        if (angular) {
-            angular!.position.x -= 0.017;
-            if (angular.position.x < -(canvasWidth / 25.0)) {
-                angular!.position.x = canvasWidth / 25.0;
-            }
-        }
+        }    
 
         if (node) {
-            node!.position.x -= 0.018;
-            if (node.position.x < -(canvasWidth / 25.0)) {
-                node!.position.x = canvasWidth / 25.0;
+            if (movingUp.node) {
+                node.position.y += 0.01; 
+                if (node.position.y >= 3) { 
+                    movingUp.node = false;
+                }
+            } else {
+                node.position.y -= 0.01; 
+                if (node.position.y <= 2) { 
+                    movingUp.node= true;
+                }
             }
-        }
+        }    
+
+        if (java) {
+            if (movingUp.java) {
+                java.position.y += 0.011; 
+                if (java.position.y >= -4) { 
+                    movingUp.java = false;
+                }
+            } else {
+                java.position.y -= 0.011; 
+                if (java.position.y <= -5) { 
+                    movingUp.java= true;
+                }
+            }
+        }    
 
         const delta = clock.getDelta();
         if (mixer) mixer.update(delta);
@@ -119,18 +153,29 @@ export async function secondAnimation() {
 
     animate();
 
-    window.addEventListener("resize", function () {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio / 4);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-    });
+    function resizeRenderer() {
+        const container = document.querySelector("#me-3dmodel") as HTMLElement;
+        if (container) {
+            const { clientWidth, clientHeight } = container;
+            renderer.setSize(clientWidth, clientHeight);
+            renderer.setClearColor(0x000000, 0);
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio / 4);
-    renderer.domElement.style.imageRendering = 'pixelated';
-    renderer.setClearColor(0x000000, 0);
-    if (document.querySelector("#me-3dmodel")) {
-        document.querySelector("#me-3dmodel")!.appendChild(renderer.domElement);
+            camera.aspect = clientWidth / clientHeight;
+            camera.updateProjectionMatrix();
+
+            if (!container.contains(renderer.domElement)) {
+                container.appendChild(renderer.domElement);
+            }
+        }
     }
+
+    const containerObserver = setInterval(() => {
+        const container = document.querySelector("#me-3dmodel");
+        if (container) {
+            clearInterval(containerObserver);
+            resizeRenderer(); 
+        }
+    }, 100); 
+
+    window.addEventListener("resize", resizeRenderer);
 }

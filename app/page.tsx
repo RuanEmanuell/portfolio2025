@@ -310,7 +310,7 @@ export default function Home() {
         </section>
         <section
           id="screen-6"
-          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col py-8 overflow-hidden"
+          className="mx-auto bg-gradient-to-b from-[#24292E] to-gray-800 h-full w-full flex items-center flex-col pt-8"
         >
           <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent mx-2">
             Entre em contato comigo

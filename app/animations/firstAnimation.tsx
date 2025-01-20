@@ -27,8 +27,8 @@ export async function firstAnimation() {
 
     const scene = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(7.5, 7.5, 7.5);
+    const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(7.5, 5, 10);
     camera.lookAt(0, 0, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -51,8 +51,8 @@ export async function firstAnimation() {
     for (let i = 0; i < models.length; i++) {
         loader.load(models[i].path, function (gltf) {
             models[i].model = gltf.scene;
-            models[i].model!.scale.set(0.9, 0.9, 0.9);
-            models[i].model!.position.y = -1.75;
+            models[i].model!.scale.set(1, 1, 1);
+            models[i].model!.position.y = -2;
             if (i == 0) {
                 models[i].model!.position.x = 0;
             } else {
@@ -74,20 +74,31 @@ export async function firstAnimation() {
 
     animate();
 
-    window.addEventListener("resize", function () {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio / 4);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-    });
+    function resizeRenderer() {
+        const container = document.querySelector("#language-3dmodel") as HTMLElement;
+        if (container) {
+            const { clientWidth, clientHeight } = container;
+            renderer.setSize(clientWidth, clientHeight);
+            renderer.setClearColor(0x000000, 0);
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio / 4);
-    renderer.domElement.style.imageRendering = 'pixelated';
-    renderer.setClearColor(0x000000, 0);
-    if (document.querySelector("#language-3dmodel")) {
-        document.querySelector("#language-3dmodel")!.appendChild(renderer.domElement);
+            camera.aspect = clientWidth / clientHeight;
+            camera.updateProjectionMatrix();
+
+            if (!container.contains(renderer.domElement)) {
+                container.appendChild(renderer.domElement);
+            }
+        }
     }
+
+    const containerObserver = setInterval(() => {
+        const container = document.querySelector("#language-3dmodel");
+        if (container) {
+            clearInterval(containerObserver);
+            resizeRenderer(); 
+        }
+    }, 100); 
+
+    window.addEventListener("resize", resizeRenderer);
 }
 
 export function changeTechModel(i: number) {
