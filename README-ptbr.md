@@ -1,14 +1,14 @@
-# Veja a versão em Português <a href="README-ptbr.md">aqui</a>
+# Check the English version <a href="README.md"> here</a>
 
-## Portfolio 2025
+## Portfólio 2025
 
-### What is this? 🤔 
-This project is my portfolio, it has informations about me, what I have experience on, my projects and everything in between.
+### O que é isso? 🤔
+Este projeto é o meu portfólio, contendo informações sobre mim, minha experiência, meus projetos e tudo mais.
 
-### Where can I acess it? 🖥
+### Onde posso acessá-lo? 🖥
 You can acess it <a href="https://ruanemanuell.dev.br">here</a>
 
-### Which tecnologies were used to build it? 🚀 
+### Quais tecnologias foram utilizadas para construí-lo? 🚀
 <table>
     <tr>
         <td style="padding: 5px;">
@@ -40,14 +40,15 @@ You can acess it <a href="https://ruanemanuell.dev.br">here</a>
 
 ### How to run 🏃
 
-     Clone the repository.
-     Install dependencies using 'npm install'.
-     Run Next with 'npm run dev'.
-     Access http://localhost:3000 in your browser.
+     Clone o repositório.
+     Instale as dependências com 'npm install'.
+     Inicie o Next com 'npm run dev'.
+     Accesse http://localhost:3000 no seu navegador.
     
 ### Here are some images of the project running ⚡️: 
 ![image](https://github.com/user-attachments/assets/24614697-2193-4b0c-8e7c-0b051ec5a235)
 ![image](https://github.com/user-attachments/assets/ae5792b8-3d61-4f20-ab3c-d18d57b2c08b)
+
 
 
 
