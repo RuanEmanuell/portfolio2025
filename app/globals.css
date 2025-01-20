@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    color-scheme: only light;
+}
+
 @keyframes hand-animation{
     0% {transform: rotate(0);}
     50% {transform: rotate(60deg);}
