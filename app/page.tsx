@@ -254,9 +254,9 @@ export default function Home() {
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-8 w-8 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center transition hover:bg-gray-300 hover:scale-105' onClick={decreaseProjectIndex} aria-label="Passar pro projeto anterior">
               <div className="w-0 h-0 
               rotate-90
-              border-l-[12px] border-l-transparent
-              border-t-[15px] border-t-black
-              border-r-[12.5px] border-r-transparent">
+              border-l-[9px] lg:border-l-[12px] border-l-transparent
+              border-t-[12px] lg:border-t-[15px] border-t-black
+              border-r-[9px] lg:border-r-[12px] border-r-transparent">
               </div>
             </button>
             <div className='flex flex-col'>
@@ -284,9 +284,9 @@ export default function Home() {
             <button className='bg-white font-bold text-center text-2xl lg:text-3xl h-8 w-8 lg:h-16 lg:w-16 rounded-full my-auto mx-2 flex justify-center items-center hover:bg-gray-300 hover:scale-105' onClick={increaseProjectIndex} aria-label="Passar pro próximo projeto">
               <div className="w-0 h-0 
               rotate-[-90deg]
-              border-l-[12px] border-l-transparent
-              border-t-[15px] border-t-black
-              border-r-[12.5px] border-r-transparent">
+              border-l-[9px] lg:border-l-[12px] border-l-transparent
+              border-t-[12px] lg:border-t-[15px] border-t-black
+              border-r-[9px] lg:border-r-[12px] border-r-transparent">
               </div>
             </button>
           </div>
