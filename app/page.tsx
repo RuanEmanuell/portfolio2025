@@ -98,7 +98,7 @@ export default function Home() {
       {loading ? <div className='h-screen w-screen flex justify-center items-center'><Loading /></div> : <></>}
 
       <div
-        className={`${!loading ? 'flex' : 'hidden'} flex-col`}
+        className={`${!loading ? 'flex' : 'hidden'} flex-col overflow-x-hidden`}
       >
         <nav className='bg-black w-full h-16 flex justify-end lg:justify-center items-center'>
           <div className='max-w-xl w-full flex-row justify-between hidden lg:flex'>

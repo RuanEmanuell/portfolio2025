@@ -16,7 +16,7 @@ export async function secondAnimation() {
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 2, 15);
+    camera.position.set(0, 3, 15);
     camera.lookAt(0, 0, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -81,7 +81,7 @@ export async function secondAnimation() {
 
     function animate() {
         requestAnimationFrame(animate);
-        
+
         const canvasWidth = renderer.domElement.width;
 
         if (react) {
