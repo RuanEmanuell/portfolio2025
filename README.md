@@ -46,9 +46,8 @@ You can acess it <a href="https://ruanemanuell.dev.br">here</a>
      Access http://localhost:3000 in your browser.
     
 ### Here are some images of the project running ⚡️: 
-![image](https://github.com/user-attachments/assets/2c06bdf9-eefc-43e3-8054-f6db19399fa6)
-![image](https://github.com/user-attachments/assets/4a97eff4-3e54-45fb-b3e8-299be10a4c01)
-
+![image](https://github.com/user-attachments/assets/24614697-2193-4b0c-8e7c-0b051ec5a235)
+![image](https://github.com/user-attachments/assets/ae5792b8-3d61-4f20-ab3c-d18d57b2c08b)
 
 
 
