@@ -132,7 +132,7 @@ export default function Home() {
           <div className="flex justify-center flex-col items-center">
             <div className="flex items-center w-80 md:w-128">
               <h1 className="text-3xl md:text-4xl text-center font-bold text-white mt-2 mx-2">
-                Olá, meu nome é Ruan Emanuell Alencar!
+                Olá, meu nome é Ruan Emanuell!
               </h1>
               <span
                 className="text-3xl md:text-4xl ml-2 absolute right-[2rem] top-[1.25rem] md:right-[9rem] hand-animate"
@@ -323,7 +323,7 @@ export default function Home() {
 
         </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
-          <p className='text-white text-lg'>© 2025 - Ruan Emanuell</p>
+          <p className='text-white text-lg'>© 2025 - Ruan Emanuell Alencar</p>
           <div className='w-32 h-8 flex flex-row justify-end items-center'>
             <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
             <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
