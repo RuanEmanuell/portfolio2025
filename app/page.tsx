@@ -16,7 +16,7 @@ export default function Home() {
 
   const techs = [
     { tech: "Javascript", color: "#F0DB4F", text: "Javascript foi a primeira linguagem de programação em que desenvolvi, ainda em 2022. Desde então, tenho usado-a quase que diariamente, seja em sua forma pura ou com seus frameworks e bibliotecas." },
-    { tech: "Java", color: "#EC4134", text: "Java é com certeza uma das minhas linguagens preferidas. Me aprofundei no estudo de Programação Orientada a Objetos em 2024 com essa linguagem, e a ultilizei extensivamente profissionalmente, principalmente na parte do back-end com o framework Spring Boot." },
+    { tech: "Java", color: "#EC4134", text: "Java é com certeza uma das minhas linguagens preferidas. Me aprofundei no estudo de Programação Orientada a Objetos em 2024 com essa linguagem, e a utilizei extensivamente profissionalmente, principalmente na parte do back-end com o framework Spring Boot." },
     { tech: "React.js", color: "#61DBFB", text: "Desenvolvo com React.js desde o final de 2023, quando decidi explorar o ecossistema do desenvolvimento web moderno. Desde então, venho acumulando experiência prática em projetos diversos, incluindo aplicações corporativas, sistemas interativos e projetos acadêmicos." },
     { tech: "Angular", color: "#B3373E", text: "Atualmente, Angular é o framework front-end que mais tenho contato profissionalmente. Ele tem me permitido desenvolver aplicações robustas e escaláveis no ambiente corporativo, entregando soluções de alta qualidade." },
     { tech: "Node.js", color: "#3A8338", text: "Node.js é o framework que uso atualmente no backend profissionalmente, mas também já o utilizei extensivamente em projetos pessoais. Sua eficiência e versatilidade têm sido fundamentais para entregar soluções server-side modernas e escaláveis." },
@@ -132,7 +132,7 @@ export default function Home() {
           <div className="flex justify-center flex-col items-center">
             <div className="flex items-center w-80 md:w-128">
               <h1 className="text-3xl md:text-4xl text-center font-bold text-white mt-2 mx-2">
-                Olá, meu nome é Ruan Emanuell!
+                Olá, meu nome é Ruan Emanuell Alencar!
               </h1>
               <span
                 className="text-3xl md:text-4xl ml-2 absolute right-[2rem] top-[1.25rem] md:right-[9rem] hand-animate"
@@ -323,7 +323,7 @@ export default function Home() {
 
         </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
-          <p className='text-white text-lg'>© 2025 - Ruan Emanuell Alencar</p>
+          <p className='text-white text-lg'>© 2025 - Ruan Emanuell</p>
           <div className='w-32 h-8 flex flex-row justify-end items-center'>
             <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
             <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
