@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ruan Emanuell",
+  title: "Ruan Emanuell Alencar",
   description: "Meu portfólio feito com Next.js e Three.js",
 };
 
