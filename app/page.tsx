@@ -230,7 +230,7 @@ export default function Home() {
                 <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(02/2023 - presente)</p>
               </div>
             </div>
-            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Atualmente estou no sexto e último período de Análise e Desenvolvimento de Sistemas pela IFTM.  Durante a graduação, adquiri conhecimentos em linguagens de programação, engenharia de software, banco de dados e metodologias ágeis. Também participei de projetos acadêmicos que fortaleceram minha capacidade de desenvolver aplicações robustas e inovadoras. (Previsão de Conclusão: 12/2025)</p>
+            <p className='text-sm lg:text-md text-gray-400 text-left px-6 mt-4'>Atualmente estou no sexto e último período de Análise e Desenvolvimento de Sistemas pela IFTM.  Durante a graduação, adquiri conhecimentos em linguagens de programação, engenharia de software, banco de dados e metodologias ágeis. Também participei de projetos acadêmicos que fortaleceram minha capacidade de desenvolver aplicações robustas e inovadoras. (Previsão de Conclusão: 12/2026)</p>
           </div>
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-[#0D1117] to-gray-800 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-t hover:border-gray-300 cursor-pointer'>
             <div className='flex flex-row items-center w-full px-6'>
@@ -323,7 +323,7 @@ export default function Home() {
 
         </section>
         <footer className='bg-black w-full h-16 flex justify-around items-center'>
-          <p className='text-white text-lg'>© 2025 - Ruan Emanuell Alencar</p>
+          <p className='text-white text-lg'>© 2026 - Ruan Emanuell Alencar</p>
           <div className='w-32 h-8 flex flex-row justify-end items-center'>
             <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
             <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
