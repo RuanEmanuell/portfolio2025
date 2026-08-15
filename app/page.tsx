@@ -326,7 +326,7 @@ export default function Home() {
           <p className='text-white text-lg'>© 2026 - Ruan Emanuell Alencar</p>
           <div className='w-32 h-8 flex flex-row justify-end items-center'>
             <a href='https://github.com/RuanEmanuell' target='_blank' rel="noreferrer"><img src="./logos/github.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Github" aria-label="Link do meu Github" loading='lazy'></img></a>
-            <a href='https://www.linkedin.com/in/ruan-emanuell-649b97247/' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
+            <a href='https://www.linkedin.com/in/ruan-emanuell' target='_blank' rel="noreferrer" className='ml-2'><img src="./logos/linkedin.webp" className='w-10 h-10 bg-white rounded-full border-white border-2' alt="Logo do Linkedin" aria-label="Link do meu Linkedin" loading='lazy'></img></a>
           </div>
         </footer>
       </div>
