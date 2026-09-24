@@ -180,69 +180,68 @@ export default function Home() {
           <h1 className="text-2xl lg:text-3xl text-center font-bold bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent mx-2">
             Minhas experiências profissionais
           </h1>
-         <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
+            <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex flex-col py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
 
-            <div className='flex flex-row items-center w-full px-6 mb-6'>
-              <img
-                src="./logos/bravo.webp"
-                className='w-10 h-10 mr-4'
-                alt="Logo da Bravo"
-                loading='lazy'
-              />
-          
-              <div>
-                <h1 className='text-lg lg:text-2xl text-white font-bold'>
-                  Bravo Serviços Logísticos
-                </h1>
-          
-                <p className='text-sm text-gray-400 font-semibold italic'>
-                  12/2024 - presente
-                </p>
+              <div className='flex flex-row items-center w-full px-6 mb-6'>
+                <img
+                  src="./logos/bravo.webp"
+                  className='w-10 h-10 mr-4'
+                  alt="Logo da Bravo"
+                  loading='lazy'
+                />
+            
+                <div>
+                  <h1 className='text-lg lg:text-2xl text-white font-bold'>
+                    Bravo Serviços Logísticos
+                  </h1>
+            
+                  <p className='text-sm text-gray-400 font-semibold italic'>
+                    12/2024 - presente
+                  </p>
+                </div>
               </div>
-            </div>
-          
-            <div className='relative ml-11 mr-6'>
-          
-              <div className='absolute left-[2px] top-3 bottom-[78px] w-[2px] bg-gray-500'></div>
-          
-              <div className='relative pl-8 pb-7'>
-          
-                <div className='absolute left-[-2px] top-[9px] w-[10px] h-[10px] rounded-full bg-gray-300'></div>
-          
-                <h2 className='text-md lg:text-xl text-white font-bold'>
+            
+              <div className='relative ml-11 mr-6'>
+  
+              <div className='absolute left-[2px] top-[14px] h-[calc(100%-28px)] w-[2px] bg-gray-500'></div>
+  
+              <div className='relative pl-8 pb-8'>
+                  <div className='absolute left-[-2px] top-[9px] w-[10px] h-[10px] rounded-full bg-gray-300 z-10'></div>
+  
+                  <h2 className='text-md lg:text-xl text-white font-bold'>
                   Analista de Sistemas III
-                </h2>
-          
-                <p className='text-sm text-gray-400 italic mt-1 mb-3'>
+                  </h2>
+  
+                  <p className='text-sm text-gray-400 italic mt-1 mb-3'>
                   09/2026 - presente
-                </p>
-          
-                <p className='text-sm lg:text-md text-gray-400'>
+                  </p>
+  
+                  <p className='text-sm lg:text-md text-gray-400'>
                   Atuação na evolução e sustentação do sistema de Monitoria de Cargas da Bravo,
                   com desenvolvimento de novas funcionalidades, manutenção de integrações e
                   melhorias contínuas da plataforma.
-                </p>
+                  </p>
               </div>
-          
+  
               <div className='relative pl-8'>
-          
-                <div className='absolute left-[-2px] top-[9px] w-[10px] h-[10px] rounded-full bg-gray-300'></div>
-          
-                <h2 className='text-md lg:text-xl text-white font-bold'>
+                  <div className='absolute left-[-2px] top-[9px] w-[10px] h-[10px] rounded-full bg-gray-300 z-10'></div>
+  
+                  <h2 className='text-md lg:text-xl text-white font-bold'>
                   Analista de Sistemas II
-                </h2>
-          
-                <p className='text-sm text-gray-400 italic mt-1 mb-3'>
+                  </h2>
+  
+                  <p className='text-sm text-gray-400 italic mt-1 mb-3'>
                   12/2024 - 09/2026
-                </p>
-          
-                <p className='text-sm lg:text-md text-gray-400'>
+                  </p>
+  
+                  <p className='text-sm lg:text-md text-gray-400'>
                   Desenvolvimento e manutenção de aplicações web escaláveis, com foco em
                   Angular no front-end e Node.js no back-end.
-                </p>
-          
+                  </p>
               </div>
+
             </div>
+
           </div>
           
           <div className='w-80 md:w-full max-w-2xl border-2 border-gray-700 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg flex flex-col items-center py-6 my-6 transition hover:bg-gradient-to-l hover:border-gray-300 cursor-pointer'>
