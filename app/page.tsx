@@ -195,7 +195,7 @@ export default function Home() {
                     Bravo Serviços Logísticos
                   </h1>
                   
-                  <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - Presente)</p>
+                  <p className='text-md lg:text-lg text-gray-400 font-semibold italic'>(12/2024 - presente)</p>
                   
                 </div>
               </div>
